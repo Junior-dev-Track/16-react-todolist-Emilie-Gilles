@@ -4,12 +4,22 @@
   align-items: center;
   justify-content: center;
   margin-top: 50px;
-  width: 100%;
+
+  max-width: 700px;
   height: 100%;
   padding: 4rem;
+
   .toDoList__input {
     align-self: flex-end;
     margin-bottom: 10px;
+    display: flex;
+    gap: 0.5rem;
+
+    input {
+      width: 20rem;
+      border: 3px solid black;
+      border-radius: 5px;
+    }
   }
   .toDoList__remainTasks {
     align-self: flex-start;
@@ -17,20 +27,68 @@
   }
   .allTasks {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-self: center;
     justify-content: center;
     width: 100%;
+
     border: 2px solid black;
     min-height: 5rem;
-    .allTasks__tasksToDo,
-    .allTasks__tasksDone {
-      border-right: 1px solid black;
+    .allTasks__tasksToDo {
+      border: 2px solid black;
       text-align: center;
 
-      width: 50%;
       h2 {
         border-bottom: 1px solid black;
+      }
+      ul {
+        list-style-type: none;
+
+        min-height: 5rem;
+        li {
+          display: grid;
+          gap: 1rem;
+          grid-template-columns: 0.5fr 2fr 1fr;
+          align-items: center;
+
+          text-align: left;
+          padding: 0.5rem;
+          .taskName {
+            min-width: 10rem;
+          }
+          .allTasks__tasksToDo__btns {
+            display: flex;
+            justify-content: space-between;
+            gap: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+  .allTasks__tasksDone {
+    text-align: center;
+    border: 2px solid black;
+
+    h2 {
+      border-bottom: 1px solid black;
+    }
+    ul {
+      list-style-type: none;
+
+      min-height: 5rem;
+      li {
+        display: grid;
+        grid-template-columns: 0.5fr 2fr 0.5fr 0.5fr;
+        align-items: center;
+        padding: 0.5rem;
+        text-align: left;
+        gap: 1rem;
+        span {
+          grid-column: 2/3;
+        }
+        button {
+          grid-column: 4/5;
+        }
       }
     }
   }

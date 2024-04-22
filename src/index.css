@@ -1,6 +1,7 @@
 @import "./Stylesheet/_reset.scss";
 @import "./Stylesheet/_header.scss";
 @import "./Stylesheet/_toDoList.scss";
+@import "./Stylesheet/_components.scss";
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
